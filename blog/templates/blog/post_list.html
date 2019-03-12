@@ -9,17 +9,13 @@
 		<div>
 			<h1><a href="/">abusalmah blog</a></h1>
 		</div>
-
-		<div>
-			<p>la daabacay: 11.03.2019</p>
-			<h2><a href="/">blog gii iigu horeeyay</a></h2>
-			<p>urlpatterns = [ path('', views.post_list, name='post_list'),]</p>
-		</div>
-
-		<div>
-			<p>la daabacay: 12.03.2019</p>
-			<h2><a href="">Qormadaydii 2aad</a></h2>
-			<p>urlpatterns = [ path('', views.post_list, name='post_list'),]</p>
-		</div>
+{% for post in posts %}
+	<div>
+		<p>Published: {{post.published_date}}</p>
+		<h2><a href="">{{post.title}}</h2>
+		<p>{{post.text|linebreaksbr }}</p>
+	</div>
+{% endfor %}
 	</body>
+
 </html>
